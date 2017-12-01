@@ -286,7 +286,7 @@ defmodule PropCheck.BasicTypes do
 
   @doc "An Erlang string, i.e. `list(char)`"
   @spec char_list() :: type
-  def char_list(), do: list(char())
+  defdelegate char_list(), to: :proper_types, as: :string
 
   @doc "weighted_union(FreqChoices)"
   @spec wunion([{frequency,raw_type},...]) :: type
